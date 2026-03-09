@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OtoPremi - Kalkulator Asuransi Mobil Profesional</title>
+    <title>OtoPremi - Smart Calculator Asuransi Mobil</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -28,13 +28,13 @@
         <div class="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-slate-900/90"></div>
     </div>
 
-    <div class="max-w-md w-full glass-effect rounded-[2.5rem] shadow-2xl overflow-hidden relative z-10 border border-white/40 my-10">
+    <div class="max-w-md w-full glass-effect rounded-[2.5rem] shadow-2xl overflow-hidden relative z-10 border border-white/40 my-10 animate-fade-in-up">
         
         <div class="bg-slate-900 p-8 text-center border-b border-white/5">
             <h1 class="text-white text-3xl font-extrabold tracking-tighter italic">
                 OTO<span class="text-blue-500 underline decoration-2 underline-offset-4">PREMI</span>
             </h1>
-            <p class="text-slate-400 text-[10px] mt-3 uppercase tracking-[0.3em] font-bold">Insurtech Solutions</p>
+            <p class="text-slate-400 text-[10px] mt-3 uppercase tracking-[0.3em] font-bold">Independent Smart Calculator</p>
         </div>
 
         <div class="p-8 space-y-6">
@@ -70,88 +70,78 @@
             </div>
 
             <button onclick="hitungPremi()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-5 rounded-2xl shadow-xl shadow-blue-500/30 transform active:scale-[0.97] transition-all mt-4 text-base tracking-widest uppercase">
-                Hitung Premi Saya
+                Hitung Estimasi Premi
             </button>
         </div>
 
         <div id="resultSection" class="hidden bg-slate-900 p-8 animate-fade-in-up">
             <div class="text-center">
-                <p class="text-[10px] font-bold text-blue-400 uppercase tracking-[0.2em]">Estimasi Premi Per Tahun</p>
+                <p class="text-[10px] font-bold text-blue-400 uppercase tracking-[0.2em]">Estimasi Berdasarkan Regulasi Tarif</p>
                 <h2 class="text-3xl font-black text-white mt-2" id="hasilPremi">Rp 0</h2>
-                <p class="text-[10px] text-slate-400 mt-3 leading-relaxed italic">*Harga belum termasuk diskon agen & biaya admin.</p>
+                <p class="text-[10px] text-slate-400 mt-3 leading-relaxed italic">*Simulasi berdasarkan Surat Edaran OJK (SEOJK No. 6/2017) tentang tarif asuransi.</p>
                 <button onclick="kirimWA()" class="w-full flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-black py-4 rounded-xl shadow-lg transition-all mt-6 uppercase tracking-wider">
-                    Klaim Promo via WhatsApp
+                    Konsultasi Agen Berlisensi
                 </button>
             </div>
         </div>
     </div>
 
+    <footer class="w-full max-w-2xl px-6 text-center relative z-10 pb-12">
+        <div class="flex justify-center items-center gap-8 mb-8 opacity-60">
+            <div class="text-center">
+                <p class="text-[10px] text-white font-bold uppercase tracking-widest mb-1">Akurasi Data</p>
+                <p class="text-[9px] text-blue-400 font-medium italic">Sesuai SEOJK No. 6/2017</p>
+            </div>
+            <div class="h-6 w-[1px] bg-white/20"></div>
+            <div class="text-center">
+                <p class="text-[10px] text-white font-bold uppercase tracking-widest mb-1">Keamanan Data</p>
+                <p class="text-[9px] text-green-400 font-medium italic">Direct to Agent Messenger</p>
+            </div>
+        </div>
 
         <div class="space-y-4 border-t border-white/10 pt-6">
             <p class="text-[10px] text-slate-400 leading-relaxed max-w-md mx-auto">
-                <strong>OtoPremi</strong> adalah platform kalkulator asuransi independen. Kami membantu pengguna mendapatkan estimasi premi sesuai aturan tarif OJK.
+                <strong>OtoPremi</strong> adalah platform simulasi kalkulator independen yang dikembangkan oleh <strong>Stephen</strong> (Agen Asuransi Terdaftar). 
+                Hasil perhitungan ini adalah estimasi untuk membantu perencanaan finansial Anda.
             </p>
             <div class="flex justify-center gap-4 text-[9px] font-bold text-slate-500 uppercase tracking-widest">
-                <button onclick="toggleModal('modal-tos')" class="hover:text-blue-400">Syarat</button>
+                <button onclick="toggleModal('modal-tos')" class="hover:text-blue-400">Ketentuan</button>
                 <span>•</span>
                 <button onclick="toggleModal('modal-privacy')" class="hover:text-blue-400">Privasi</button>
-                <span>•</span>
-                <button onclick="toggleModal('modal-klaim')" class="hover:text-blue-400 text-blue-300">Panduan Klaim</button>
             </div>
-            <p class="text-[9px] text-slate-600">&copy; 2026 OtoPremi Tech. Berizin dan Diawasi oleh OJK.</p>
+            <p class="text-[9px] text-slate-600">&copy; 2026 OtoPremi Tech by Stephen. Hak Cipta Dilindungi.</p>
         </div>
     </footer>
 
     <div id="modal-tos" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50">
         <div class="modal-overlay absolute w-full h-full bg-slate-900 opacity-90"></div>
-        <div class="modal-container glass-effect w-11/12 md:max-w-md mx-auto rounded-3xl z-50 overflow-y-auto">
+        <div class="modal-container glass-effect w-11/12 md:max-w-md mx-auto rounded-3xl z-50">
             <div class="p-8 text-left">
                 <h3 class="text-xl font-black text-slate-900 mb-4">Syarat & Ketentuan</h3>
                 <ul class="text-xs text-slate-600 space-y-2 list-disc pl-4">
-                    <li>Estimasi premi berdasarkan tarif batas atas/bawah OJK.</li>
-                    <li>OtoPremi bukan merupakan penanggung asuransi langsung.</li>
-                    <li>Harga final ditentukan oleh pihak asuransi setelah survei unit.</li>
+                    <li>Estimasi premi mengacu pada referensi tarif resmi industri asuransi di Indonesia.</li>
+                    <li>OtoPremi tidak melakukan transaksi pembayaran asuransi langsung di website ini.</li>
+                    <li>Keputusan final premi disesuaikan dengan kebijakan perusahaan asuransi terkait.</li>
                 </ul>
                 <button onclick="toggleModal('modal-tos')" class="mt-6 w-full bg-slate-900 text-white font-bold py-3 rounded-xl">Tutup</button>
             </div>
         </div>
     </div>
 
-    <div id="modal-klaim" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50">
-        <div class="modal-overlay absolute w-full h-full bg-slate-900 opacity-90"></div>
-        <div class="modal-container glass-effect w-11/12 md:max-w-md mx-auto rounded-3xl z-50 overflow-y-auto border-2 border-blue-500">
-            <div class="p-8 text-left">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="bg-blue-600 p-2 rounded-lg text-white">🆘</div>
-                    <h3 class="text-xl font-black text-slate-900">Panduan Klaim Cepat</h3>
-                </div>
-                <div class="space-y-4 text-xs text-slate-600">
-                    <div class="bg-white p-3 rounded-xl border border-blue-100 italic">
-                        "Lapor klaim maksimal 3x24 jam setelah kejadian agar klaim tidak ditolak."
-                    </div>
-                    <p><strong>Langkah 1:</strong> Foto bagian yang rusak dan posisi kendaraan.</p>
-                    <p><strong>Langkah 2:</strong> Siapkan copy STNK, SIM Pengemudi, dan Polis Asuransi.</p>
-                    <p><strong>Langkah 3:</strong> Hubungi WhatsApp Agen kami untuk dipandu proses laporannya.</p>
-                </div>
-                <button onclick="toggleModal('modal-klaim')" class="mt-6 w-full bg-blue-600 text-white font-bold py-3 rounded-xl">Mengerti</button>
-            </div>
-        </div>
-    </div>
-
     <div id="modal-privacy" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50">
         <div class="modal-overlay absolute w-full h-full bg-slate-900 opacity-90"></div>
-        <div class="modal-container glass-effect w-11/12 md:max-w-md mx-auto rounded-3xl z-50 overflow-y-auto">
+        <div class="modal-container glass-effect w-11/12 md:max-w-md mx-auto rounded-3xl z-50">
             <div class="p-8 text-left">
                 <h3 class="text-xl font-black text-slate-900 mb-4">Kebijakan Privasi</h3>
-                <p class="text-xs text-slate-600 leading-relaxed">Kami tidak menyimpan data pribadi Anda di database kami. Data yang Anda masukkan hanya digunakan untuk keperluan simulasi hitungan premi secara real-time. Hubungan komunikasi melalui WhatsApp bersifat pribadi antara Anda dan agen.</p>
+                <p class="text-xs text-slate-600 leading-relaxed">Keamanan data Anda adalah prioritas kami. Website ini tidak menyimpan input data kendaraan Anda dalam database permanen. Interaksi Anda melalui WhatsApp dilindungi secara end-to-end oleh platform WhatsApp.</p>
                 <button onclick="toggleModal('modal-privacy')" class="mt-6 w-full bg-slate-900 text-white font-bold py-3 rounded-xl">Tutup</button>
             </div>
         </div>
     </div>
 
     <script>
-        const nomorWA = "6281291490156";
-        const namaAgen = "Agen OtoPremi"; 
+        const nomorWA = "6281291490156"; // Nomor Stephen
+        const namaAgen = "Stephen"; 
         let tipeProteksi = 'allrisk';
 
         function toggleModal(id) {
@@ -163,8 +153,10 @@
 
         function pilihTipe(tipe) {
             tipeProteksi = tipe;
-            document.getElementById('btn-allrisk').className = (tipe === 'allrisk') ? "py-4 px-2 border-2 rounded-2xl text-xs font-black transition-all border-blue-600 bg-blue-50 text-blue-700 shadow-sm" : "py-4 px-2 border-2 border-slate-100 rounded-2xl text-xs font-black text-slate-400 hover:bg-slate-50 transition-all";
-            document.getElementById('btn-tlo').className = (tipe === 'tlo') ? "py-4 px-2 border-2 rounded-2xl text-xs font-black transition-all border-blue-600 bg-blue-50 text-blue-700 shadow-sm" : "py-4 px-2 border-2 border-slate-100 rounded-2xl text-xs font-black text-slate-400 hover:bg-slate-50 transition-all";
+            const activeClass = "py-4 px-2 border-2 rounded-2xl text-xs font-black transition-all border-blue-600 bg-blue-50 text-blue-700 shadow-sm";
+            const inactiveClass = "py-4 px-2 border-2 border-slate-100 rounded-2xl text-xs font-black text-slate-400 hover:bg-slate-50 transition-all";
+            document.getElementById('btn-allrisk').className = (tipe === 'allrisk') ? activeClass : inactiveClass;
+            document.getElementById('btn-tlo').className = (tipe === 'tlo') ? activeClass : inactiveClass;
         }
 
         function formatRupiah(input) {
@@ -178,9 +170,12 @@
         }
 
         function hitungPremi() {
-            const harga = parseInt(document.getElementById('hargaMobil').value.replace(/\./g, ''));
+            const hargaVal = document.getElementById('hargaMobil').value.replace(/\./g, '');
+            const harga = parseInt(hargaVal);
             const wilayah = document.getElementById('wilayah').value;
-            if (!harga || isNaN(harga)) { alert("Masukkan harga mobil."); return; }
+            
+            if (!harga || isNaN(harga)) { alert("Silakan masukkan harga mobil yang valid."); return; }
+            
             let rate = 0;
             if (tipeProteksi === 'tlo') {
                 rate = (wilayah == "1") ? 0.0047 : (wilayah == "2" ? 0.0044 : 0.0041);
@@ -191,8 +186,13 @@
                 else if (harga <= 800000000) rate = (wilayah == "2") ? 0.0225 : 0.0179;
                 else rate = (wilayah == "2") ? 0.0214 : 0.0160;
             }
-            const res = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
-            document.getElementById('hasilPremi').innerText = `${res.format(harga * rate * 0.98)} - ${res.format(harga * rate * 1.05)}`;
+            
+            const formatter = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+            // Menghasilkan rentang premi sebagai estimasi yang wajar
+            const estimasiBawah = harga * rate * 0.98;
+            const estimasiAtas = harga * rate * 1.05;
+            
+            document.getElementById('hasilPremi').innerText = `${formatter.format(estimasiBawah)} - ${formatter.format(estimasiAtas)}`;
             document.getElementById('resultSection').classList.remove('hidden');
             setTimeout(() => { document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' }); }, 200);
         }
@@ -202,18 +202,9 @@
             const t = tipeProteksi === 'allrisk' ? "All Risk" : "TLO";
             const w = document.getElementById('wilayah').options[document.getElementById('wilayah').selectedIndex].text;
             const e = document.getElementById('hasilPremi').innerText;
-            const msg = `Halo, saya ingin cek estimasi premi asuransi mobil.
-Tipe :
-Mobil saya:
-Tahun:
-Domisili:
-Bisa bantu prosesnya?`;
+            const msg = `Halo ${namaAgen}, saya ingin konsultasi premi asuransi melalui OtoPremi.\nHarga Unit: Rp ${h}\nTipe Proteksi: ${t}\n${w}\nEstimasi: ${e}\n\nMohon bantuannya untuk hitungan resminya.`;
             window.open(`https://wa.me/${nomorWA}?text=${encodeURIComponent(msg)}`, '_blank');
         }
     </script>
 </body>
-
 </html>
-
-
-
