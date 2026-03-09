@@ -101,7 +101,7 @@
 
         <div class="space-y-4 border-t border-white/10 pt-6">
             <p class="text-[10px] text-slate-400 leading-relaxed max-w-md mx-auto">
-                <strong>OtoPremi</strong> adalah platform simulasi kalkulator independen yang dikembangkan oleh <strong>Stephen</strong> (Agen Asuransi Terdaftar). 
+                <strong>OtoPremi</strong> adalah platform simulasi kalkulator independen yang dikembangkan oleh Agen Asuransi Terdaftar. 
                 Hasil perhitungan ini adalah estimasi untuk membantu perencanaan finansial Anda.
             </p>
             <div class="flex justify-center gap-4 text-[9px] font-bold text-slate-500 uppercase tracking-widest">
@@ -202,9 +202,13 @@
             const t = tipeProteksi === 'allrisk' ? "All Risk" : "TLO";
             const w = document.getElementById('wilayah').options[document.getElementById('wilayah').selectedIndex].text;
             const e = document.getElementById('hasilPremi').innerText;
-            const msg = `Halo ${namaAgen}, saya ingin konsultasi premi asuransi melalui OtoPremi.\nHarga Unit: Rp ${h}\nTipe Proteksi: ${t}\n${w}\nEstimasi: ${e}\n\nMohon bantuannya untuk hitungan resminya.`;
+            const msg = `Halo, saya ingin konsultasi premi asuransi melalui OtoPremi.\nHarga Unit: Rp ${h}\nTipe Proteksi: ${t}\n${w}\nEstimasi: ${e}\n\n
+            Tipe Mobil :
+            Tahun Mobil :
+            Mohon bantuannya untuk hitungan resminya.`;
             window.open(`https://wa.me/${nomorWA}?text=${encodeURIComponent(msg)}`, '_blank');
         }
     </script>
 </body>
 </html>
+
