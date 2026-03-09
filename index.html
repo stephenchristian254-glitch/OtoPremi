@@ -215,14 +215,16 @@
             const w = document.getElementById('wilayah').options[document.getElementById('wilayah').selectedIndex].text;
             const e = document.getElementById('hasilPremi').innerText;
             const msg = `Halo, saya ingin cek estimasi premi asuransi mobil.
-Tipe : ${e}\n\n
+Tipe :
 Mobil saya:
 Tahun:
-Domisili:\nEstimasi: ${e}\n\nBisa bantu prosesnya?`;
+Domisili:
+Bisa bantu prosesnya?`;
             window.open(`https://wa.me/${nomorWA}?text=${encodeURIComponent(msg)}`, '_blank');
         }
     </script>
 </body>
 
 </html>
+
 
