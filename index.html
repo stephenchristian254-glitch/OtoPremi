@@ -214,9 +214,13 @@
             const t = tipeProteksi === 'allrisk' ? "All Risk" : "TLO";
             const w = document.getElementById('wilayah').options[document.getElementById('wilayah').selectedIndex].text;
             const e = document.getElementById('hasilPremi').innerText;
-            const msg = `Halo ${namaAgen}, saya cek premi di OtoPremi.\nHarga: Rp ${h}\nTipe: ${t}\n${w}\nEstimasi: ${e}\n\nBisa bantu prosesnya?`;
+            const msg = `Halo, saya ingin cek estimasi premi asuransi mobil.
+Mobil saya:
+Tahun:
+Domisili:\nEstimasi: ${e}\n\nBisa bantu prosesnya?`;
             window.open(`https://wa.me/${nomorWA}?text=${encodeURIComponent(msg)}`, '_blank');
         }
     </script>
 </body>
+
 </html>
