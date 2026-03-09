@@ -202,8 +202,7 @@
             const t = tipeProteksi === 'allrisk' ? "All Risk" : "TLO";
             const w = document.getElementById('wilayah').options[document.getElementById('wilayah').selectedIndex].text;
             const e = document.getElementById('hasilPremi').innerText;
-            const msg = `Halo, saya ingin konsultasi premi asuransi melalui OtoPremi.\nHarga Unit: Rp ${h}\nTipe Proteksi: ${t}\n${w}\nEstimasi: ${e}\n\n
-            Tipe Mobil :
+            const msg = `Halo, saya ingin konsultasi premi asuransi melalui OtoPremi.\nHarga Unit: Rp ${h}\nTipe Proteksi: ${t}\n${w}\nEstimasi: ${e}\n\nTipe Mobil :
             Tahun Mobil :
             Mohon bantuannya untuk hitungan resminya.`;
             window.open(`https://wa.me/${nomorWA}?text=${encodeURIComponent(msg)}`, '_blank');
@@ -211,4 +210,5 @@
     </script>
 </body>
 </html>
+
 
